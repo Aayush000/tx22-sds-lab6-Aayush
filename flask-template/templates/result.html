@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/result.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your Quiz Results</h1>
+    <hr>
+    <div class="items">
+        {% for state in result %}
+        {% if result[state] == True %}
+        <h3>You guessed the capital of {{state}} correctly!</h3>
+        {% else %}
+        <h3>You guessed the capital of {{state}} incorrectly! The capital is {{real_capital[state]}}</h3>
+        {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>

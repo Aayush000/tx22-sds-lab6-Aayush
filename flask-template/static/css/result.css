@@ -1,0 +1,16 @@
+h1, .items{
+    text-align: center;
+}
+
+h3{
+    background-color: grey;
+    margin: 15px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+h3:hover {
+    color: red;
+}

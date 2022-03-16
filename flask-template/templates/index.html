@@ -20,10 +20,21 @@
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
-        <h1>Hello world!</h1>
-        <form>
-            <input type="text" name="email" placeholder="Enter your email"/>
-            <input type="submit" value="Submit"/>
-        </form>
+        <div class="quiz">
+            <div class="heading">
+                <h1>Lets take a quiz!</h1>
+            </div>
+
+            <div class="quiz_inputs">
+                <form method="post" action="/results">
+                    <input type="text" name="New York" placeholder="New York's Capital"/><br>
+                    <input type="text" name="California" placeholder="California's Capital"/><br>
+                    <input type="text" name="Texas" placeholder="Texas's Capital" /><br>
+                    <input type="text" name="Tennessee" placeholder="Tennessee's Capital" /><br>
+                    <input type="text" name="Arizona" placeholder="Arizona's Capital" /><br>
+                    <input type="submit" value="Submit" id="submitted"/>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

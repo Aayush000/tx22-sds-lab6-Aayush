@@ -12,3 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+state_capitals = {
+    'New York': 'Albany',
+    'California': 'Sacramanto',
+    'Texas': 'Austin',
+    'Tennessee': 'Nashville',
+    'Arizona': 'Phoenix'
+}
+
+def grade_quiz(responses):
+    result = {}
+
+    for state in responses:
+        if responses[state] == state_capitals[state]:
+            result[state] = True
+        else:
+            result[state] = False
+    
+    return [result, state_capitals]

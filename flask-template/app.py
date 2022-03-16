@@ -13,11 +13,12 @@
 # limitations under the License.
 
 # ---- YOUR APP STARTS HERE ----
+# -----------------------------Team Members --> Aayush, Aaron-----------------------------
 # -- Import section --
 from flask import Flask
-# from flask import render_template
-# from flask import request
-
+from flask import render_template
+from flask import request
+from model import grade_quiz
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -27,4 +28,15 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template('index.html')
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    responses = {}
+
+    for state in request.form:
+        responses[state] = request.form[state]
+    
+    graded_result, state_capitals = grade_quiz(responses)
+    
+    return render_template('result.html', result=graded_result, real_capital=state_capitals)
